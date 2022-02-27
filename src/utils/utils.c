@@ -140,7 +140,7 @@ char	*strjoin_free(char *s1, char const *s2)
 	size_t	i;
 	size_t	a;
 
-	nstring = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	nstring = malloc(strlen(s1) + strlen(s2) + 1);
 	i = 0;
 	a = 0;
 	if (nstring == 0)

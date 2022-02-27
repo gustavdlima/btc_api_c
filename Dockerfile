@@ -1,7 +1,7 @@
 FROM gcc:4.9
 
-COPY . /usr/src/app
-WORKDIR /usr/src/app
+COPY . /usr/src/api
+WORKDIR /usr/src/api
 
 RUN make
 

@@ -4,16 +4,14 @@
 */
 void  route(struct mg_connection *c, struct mg_http_message *parsed_request, t_logs *logs)
 {
-  t_data_request  *data;
+  t_data_request data;
 
-  data = calloc(1, sizeof(data));
-  data->treat_data = get_crypto_data();
+  data.treat_data = api_requester();
   if (mg_http_match_uri(parsed_request, "/"))
   {
     logs->status = 200;
-    // printf("%d\n", logs.status);
-    mg_http_reply(c, logs->status, "", "{%s\"}\n", data->treat_data);
-    free(data->treat_data);
+    mg_http_reply(c, logs->status, "", "{%s}\n", data.treat_data);
+    free(data.treat_data);
   }
   else
   {

@@ -1,7 +1,7 @@
 NAME	= server
 
 CC		=	gcc
-CFLAGS	=	-Wall -Wextra
+CFLAGS	=	-g -Wall -Wextra
 LIBS	= -lcurl -DMG_ENABLE_OPENSSL=1 -lssl -lcrypto
 INCLUDE =	-I ./include
 
@@ -24,7 +24,6 @@ SRC =			$(addprefix $(S_FOLDER), \
 		 $(ROUTE_FOLDER)/route.c \
 		 $(UTILS_FOLDER)/utils.c \
 		 $(API_REQUESTER_FOLDER)/api_requester.c \
-		 $(API_REQUESTER_FOLDER)/get_crypto_data.c \
 		 $(LOG_FOLDER)/log.c \
 		 $(LOG_FOLDER)/log_utils.c \
 		 $(GNL_FOLDER)/get_next_line.c \

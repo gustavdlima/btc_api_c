@@ -8,7 +8,12 @@
 #include <strings.h>
 #include <curl/curl.h>
 
-#define HOST "http://localhost:4242"
+#define HOST "http://0.0.0.0:4242"
+
+typedef struct	s_memory_struct {
+  char *memory;
+  size_t size;
+}				t_memory_struct;
 
 typedef	struct s_data_request{
 	FILE		*file;
@@ -26,8 +31,8 @@ typedef	struct s_logs{
 //---------------------------- route.c
 void 	route(struct mg_connection *c, struct mg_http_message *parsed_request, t_logs *logs);
 
-//---------------------------- get_crypto_data.c
-char	*get_crypto_data(void);
+//---------------------------- api_requester.c
+char	*api_requester(void);
 
 //---------------------------- log.c
 void	print_log(t_logs *logs, struct mg_http_message *parsed_request);
@@ -41,9 +46,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 char	*strjoin_free(char *s1, char const *s2);
 char	**ft_split(char const *s, char c);
-
-//---------------------------- api_requester.c
-void	api_requester(void);
 
 char  *index_page;
 #endif
