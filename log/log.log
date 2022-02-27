@@ -1,0 +1,40 @@
+
+Request
+STATUS CODE: 500
+METHOD: log.error{WRONG METHOD} POST
+URI: /
+PROTO: HTTP/1.1
+Body: 
+Date & Time: Sun Feb 27 04:20:45 2022
+
+Request
+STATUS CODE: 200
+METHOD: GET
+URI: /
+PROTO: HTTP/1.1
+Body: 
+Date & Time: Sun Feb 27 04:21:09 2022
+
+Request
+STATUS CODE: 404
+METHOD: GET
+URI: log.error{WRONG URI} /123
+PROTO: HTTP/1.1
+Body: 
+Date & Time: Sun Feb 27 04:21:19 2022
+
+Request
+STATUS CODE: 404
+METHOD: GET
+URI: log.error{WRONG URI} /123
+PROTO: HTTP/1.1
+Body: 
+Date & Time: Sun Feb 27 04:21:26 2022
+
+Request
+STATUS CODE: 200
+METHOD: GET
+URI: /
+PROTO: HTTP/1.1
+Body: 
+Date & Time: Sun Feb 27 04:21:32 2022
